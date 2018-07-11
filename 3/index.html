@@ -14,18 +14,48 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <!--Aquí va el jQuery-->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    <style>
+      .ultimo {
+        background-color:red;
+      }
+    </style>
   </head>
   <body>
     <h1> Hey !! </h1>
+    <script type="text/javascript">
+      $("h1").css({"color":"red"});
+    </script>
+
     <section class="section-1">
+      <script type="text/javascript">
+        $(".section-1").css({"background-color":"yellow"});
+      </script>   
+
       <h1> Hey </h1>
+      <script type="text/javascript">
+        $("h1").css({"font-size":"2em"});
+      </script>
       <span class="counter"> 101 </span>
+      <script type="text/javascript">
+        var numero= $('.counter').text();
+        numero= parseInt (numero);
+        numero= numero + 10;
+        $('.counter').text(numero);
+      </script>
+
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
     </section>
 
     <table>
       <tbody>
-        <tr class="row" id="row-1">
+
+        <tr class="row" id="row-1">   
           <td> 1 </td>
           <td> 1 </td>
           <td> 1 </td>
@@ -38,6 +68,15 @@
         </tr>
 
         <tr class="row" id="row-3">
+        <script type="text/javascript">
+          $(document).ready(function() {
+            $('#row-3').click(function(){
+              $('#row-3').css({
+                "background-color": "grey", "transition": "1s"});
+            });
+          });
+              
+        </script>
           <td> 3 </td>
           <td> 3 </td>
           <td> 3 </td>
@@ -62,5 +101,8 @@
 
       </fieldset>
     </form>
+    <script>
+      $('table tr:last-child').addClass('ultimo');
+    </script>
   </body>
 </html>
