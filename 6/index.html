@@ -25,8 +25,30 @@ Para la solución puedes inspirarte en: https://codepen.io/gabrieleromanato/pen/
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
   </head>
   <body>
-
+    <div id="galeria">
+      <figure><img src="foto.jpg" style="width: 25%;" alt=""><figcaption></figcaption></figure>
+    </div>
+    
+    <script>
+      $(function() {
+        $('img', '#galeria').on( "contextmenu", function(e) {
+            e.preventDefault();
+            $( "figcaption", "#gallery" ).text( "" );
+            $( this ).next().text( $( this ).click(function(){
+        alert("imagen con derechos de autor");
+      }) );          
+          });
+      });
+      $('img').click(function(){
+        alert("imagen con derechos de autor");
+      });
+    </script>
   </body>
 </html>
